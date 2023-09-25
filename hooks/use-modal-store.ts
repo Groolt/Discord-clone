@@ -11,6 +11,7 @@ export type ModalType =
   | 'deleteServer'
   | 'deleteChannel'
   | 'editChannel'
+  | 'messageFile'
 interface ModalStore {
   type: ModalType | null
   data: ModalData
@@ -22,6 +23,8 @@ interface ModalData {
   server?: Server
   channel?: Channel
   channelType?: ChannelType
+  apiUrl?: string
+  query?: Record<string, any>
 }
 export const useModal = create<ModalStore>((set) => ({
   type: null,
